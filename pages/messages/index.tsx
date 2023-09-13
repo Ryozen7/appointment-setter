@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Appointments() {
+export default function Messages() {
   return (
     <div className="text-primary">
-    This is appointment
+    This is messages
     </div>
   )
 }

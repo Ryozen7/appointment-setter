@@ -7,7 +7,7 @@ const Layout = ({ children }: any) => {
     <div className="h-screen w-full flex justify-between">
       {/* Aligned to the top */}
       <Sidebar />
-      <div className="w-[100%] flex flex-col">
+      <div className="w-full flex flex-col">
           <Navbar />
           <div className="w-[100%] h-[100%] overflow-y-auto">
           {children}
