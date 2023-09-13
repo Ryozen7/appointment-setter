@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom Font */
+@layer base {
+  @font-face {
+    font-family: 'CrimsonText Bold';
+    src: url(./fonts/CrimsonText-Bold.ttf) format('truetype');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'CrimsonText BoldItalic';
+    src: url(./fonts/CrimsonText-BoldItalic.ttf) format('truetype');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'CrimsonText Italic';
+    src: url(./fonts/CrimsonText-Italic.ttf) format('truetype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'CrimsonText SemiBold';
+    src: url(./fonts/CrimsonText-SemiBold.ttf) format('truetype');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'CrimsonText SemiBoldItalic';
+    src: url(./fonts/CrimsonText-SemiBoldItalic.ttf) format('truetype');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'CrimsonText';
+    src: url(./fonts/CrimsonText-Regular.ttf) format('truetype');
+    font-display: swap;
+  }
+}
+/*end Custom Font */
+
+html, body {
+    font-family: 'CrimsonText';
+    src: url(./fonts/CrimsonText-Regular.ttf) format('truetype');
+    font-display: swap;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
