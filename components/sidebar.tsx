@@ -18,8 +18,8 @@ const Sidebar = ({ children }: any) => {
   ]
 
   return (
-    <div className={`${collapse? 'w-[120px] ease-in-out': 'w-[240px]'} h-screen bg-primary relative`}>
-      <div className='w-full flex justify-center py-10 border-b-[1.5px] border-b-gray-700'>
+    <div className={`${collapse? 'w-[120px]': 'w-[240px]'} h-screen bg-primary relative`}>
+      <div className='h-[116px] w-full flex justify-center py-10 border-b-[1.5px] border-b-gray-700'>
         <Image
           src={`${collapse ?  '/images/logo.svg':'/images/logo-name.svg'}`}
           height={collapse? 40 : 50}
@@ -30,8 +30,8 @@ const Sidebar = ({ children }: any) => {
       </div>
       <div className={`w-full flex flex-col my-10 ${collapse ? 'items-center' : ''}`}>
         {navigations.map(item => (
-          <div key={item.title} className={`mt-1 px-8 py-2 hover:text-secondary hover:border-r-secondary hover:border-r-2 ${item.route === router.pathname ? 'text-secondary border-r-2 border-r-secondary': ' text-white'}`}>
-            <Link href={item.route} className='flex items-center'>
+          <div key={item.title} className={`w-full hover:text-secondary hover:border-r-secondary hover:border-r-2 ${item.route === router.pathname ? 'text-secondary border-r-2 border-r-secondary': ' text-white'}`}>
+            <Link href={item.route} className={`w-full mt-1 py-2 flex items-center ${collapse ? 'pl-0 justify-center' : 'pl-8'}`}>
               <div className='mr-2 h-[24px]'>
                 <Image
                   src={item.srcIcon? `/images/${item.srcIcon}.svg` : ''}
