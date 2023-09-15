@@ -126,10 +126,10 @@ export default function Appointments() {
 
   const saveEvent = React.useCallback(() => {
         const random = Math.floor(Math.random() * colors.length);
-            
+        const randomId = Math.floor(Math.random() * 99999999);
         const newEvent = {
             ...formValues,
-            id : tempEvent.id,
+            id : tempEvent.id || `${randomId}`,
             title: formValues.title || '',
             description: formValues?.description || formValues?.owner,
             start: formValues?.start || "2023-09-14T07:00:00.000Z",
