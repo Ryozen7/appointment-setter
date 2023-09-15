@@ -308,6 +308,7 @@ export default function Appointments() {
             <Button
               onClick={() => navigatePage(true)}
               icon="material-arrow-back"
+              // @ts-ignore
               variant="rounded"
               className="md-custom-header-button"
             ></Button>
@@ -315,6 +316,7 @@ export default function Appointments() {
             <Button
               onClick={() => navigatePage(false)}
               icon="material-arrow-forward"
+              // @ts-ignore
               variant="rounded"
               className="md-custom-header-button"
             ></Button>
