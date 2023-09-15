@@ -4,7 +4,7 @@ import veterinary from './veterinary.json';
 import Select from 'react-select';
 import moment from 'moment';
 
-export default function AppointmentForm({ type, formValues, setFormValues, saveEvent, setToastOpen }) {
+export default function AppointmentForm({ formValues, setFormValues, saveEvent, setToastOpen }) {
   const [start, startRef] = React.useState(null);
   const [end, endRef] = React.useState(null);
   const [popupEventDate, setDate] = React.useState([formValues.start || null, formValues.end || null]);
