@@ -2,49 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Custom Font */
 @layer base {
   @font-face {
-    font-family: 'CrimsonText Bold';
-    src: url(./fonts/CrimsonText-Bold.ttf) format('truetype');
+    font-family: "CrimsonText Bold";
+    src: url(./fonts/CrimsonText-Bold.ttf) format("truetype");
     font-display: swap;
   }
   @font-face {
-    font-family: 'CrimsonText BoldItalic';
-    src: url(./fonts/CrimsonText-BoldItalic.ttf) format('truetype');
+    font-family: "CrimsonText BoldItalic";
+    src: url(./fonts/CrimsonText-BoldItalic.ttf) format("truetype");
     font-display: swap;
   }
   @font-face {
-    font-family: 'CrimsonText Italic';
-    src: url(./fonts/CrimsonText-Italic.ttf) format('truetype');
+    font-family: "CrimsonText Italic";
+    src: url(./fonts/CrimsonText-Italic.ttf) format("truetype");
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'CrimsonText SemiBold';
-    src: url(./fonts/CrimsonText-SemiBold.ttf) format('truetype');
+    font-family: "CrimsonText SemiBold";
+    src: url(./fonts/CrimsonText-SemiBold.ttf) format("truetype");
     font-display: swap;
   }
-  
+
   @font-face {
-    font-family: 'CrimsonText SemiBoldItalic';
-    src: url(./fonts/CrimsonText-SemiBoldItalic.ttf) format('truetype');
+    font-family: "CrimsonText SemiBoldItalic";
+    src: url(./fonts/CrimsonText-SemiBoldItalic.ttf) format("truetype");
     font-display: swap;
   }
-  
+
   @font-face {
-    font-family: 'CrimsonText';
-    src: url(./fonts/CrimsonText-Regular.ttf) format('truetype');
+    font-family: "CrimsonText";
+    src: url(./fonts/CrimsonText-Regular.ttf) format("truetype");
     font-display: swap;
   }
 }
 /*end Custom Font */
 
-html, body {
-    font-family: 'CrimsonText';
-    src: url(./fonts/CrimsonText-Regular.ttf) format('truetype');
-    font-display: swap;
+html,
+body {
+  font-family: "CrimsonText";
+  src: url(./fonts/CrimsonText-Regular.ttf) format("truetype");
+  font-display: swap;
 }
 
 a {
@@ -56,7 +56,6 @@ a {
   box-sizing: border-box;
 }
 
-
 .appointmentWrap {
   max-width: calc(100vw - 240px);
 }
@@ -66,20 +65,18 @@ a {
 }
 
 .mbsc-windows-dark.mbsc-textfield-wrapper {
-    color: #000;
+  color: #000;
 }
 
-
 .mbsc-windows-dark.mbsc-label {
-   color: #000;
+  color: #000;
 }
 
 .mbsc-windows-dark.mbsc-textfield {
-    background: #fff ;
-    color: #1a1a1a;
+  background: #fff;
+  color: #1a1a1a;
 }
 
 .mbsc-windows.mbsc-textfield-wrapper {
-    margin: 0;
+  margin: 0;
 }
-

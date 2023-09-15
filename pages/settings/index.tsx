@@ -2,7 +2,5 @@ import React from "react";
 import ComingSoon from "../../components/coming-soon";
 
 export default function Settings() {
-  return (
-    <ComingSoon />
-  )
+  return <ComingSoon />;
 }
