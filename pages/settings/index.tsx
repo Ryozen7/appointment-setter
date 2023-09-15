@@ -1,9 +1,8 @@
 import React from "react";
+import ComingSoon from "../../components/coming-soon";
 
 export default function Settings() {
   return (
-    <div className="text-primary">
-    This is ssettings
-    </div>
+    <ComingSoon />
   )
 }

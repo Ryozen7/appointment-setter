@@ -1,9 +1,8 @@
 import React from "react";
+import ComingSoon from "../../components/coming-soon";
 
 export default function Contacts() {
   return (
-    <div className="text-primary">
-    This is contacts
-    </div>
+    <ComingSoon />
   )
 }

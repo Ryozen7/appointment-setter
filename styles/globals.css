@@ -55,3 +55,31 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.appointmentWrap {
+  max-width: calc(100vw - 240px);
+}
+
+.customWrap {
+  max-width: calc(100vw - 480px);
+}
+
+.mbsc-windows-dark.mbsc-textfield-wrapper {
+    color: #000;
+}
+
+
+.mbsc-windows-dark.mbsc-label {
+   color: #000;
+}
+
+.mbsc-windows-dark.mbsc-textfield {
+    background: #fff ;
+    color: #1a1a1a;
+}
+
+.mbsc-windows.mbsc-textfield-wrapper {
+    margin: 0;
+}
+

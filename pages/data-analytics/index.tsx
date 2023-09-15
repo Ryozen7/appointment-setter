@@ -1,9 +1,8 @@
 import React from "react";
+import ComingSoon from "../../components/coming-soon";
 
 export default function Analytics() {
   return (
-    <div className="text-primary">
-    This is analytics
-    </div>
+    <ComingSoon />
   )
 }

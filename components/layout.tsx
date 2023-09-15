@@ -5,7 +5,6 @@ import Sidebar from "./sidebar"
 const Layout = ({ children }: any) => {
   return (
     <div className="h-screen w-full flex justify-between">
-      {/* Aligned to the top */}
       <Sidebar />
       <div className="w-full flex flex-col">
           <Navbar />
