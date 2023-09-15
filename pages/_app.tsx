@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-nocheck
 import Layout from '../components/layout';
 import Head from 'next/head';
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";

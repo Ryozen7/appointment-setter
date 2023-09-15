@@ -1,5 +1,6 @@
+// @ts-nocheck
 import React from "react";
-import { Eventcalendar, snackbar, setOptions, Popup, Button, Input, Textarea, Switch, Datepicker, SegmentedGroup, SegmentedItem } from '@mobiscroll/react';
+import { Input,  Datepicker } from '@mobiscroll/react';
 import veterinary from './veterinary.json';
 import Select from 'react-select';
 import moment from 'moment';

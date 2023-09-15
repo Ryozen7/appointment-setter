@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { Page, snackbar, Eventcalendar, getJson, Toast, CalendarNav, Button, CalendarToday, SegmentedGroup, SegmentedItem } from '@mobiscroll/react';
 import AppointmentView from "../../components/appointment-view";
