@@ -1,4 +1,3 @@
-import Footer from "./elements/footer"
 import Navbar from "./navbar"
 import Sidebar from "./sidebar"
 

@@ -300,7 +300,6 @@ export default function Appointments() {
             <AppointmentView event={eventData} onCancelEvent={onCancelEvent} onScheduleEvent={onScheduleEvent} />
           : 
             <AppointmentForm 
-              type={actionType} 
               formValues={formValues} 
               setFormValues={setFormValues} 
               saveEvent={saveEvent}
