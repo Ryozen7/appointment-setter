@@ -3,7 +3,7 @@ import React from "react";
 import Image from 'next/image';
 import veterinary from './veterinary.json';
 
-export default function AppointmentView({ event, onCancelEvent, onScheduleEvent }) {
+export default function AppointmentView({ event, onCancelEvent, onScheduleEvent, setToastOpen }) {
 
   const clinic = veterinary[event?.clinicValue || 0];
   return (
@@ -122,7 +122,8 @@ export default function AppointmentView({ event, onCancelEvent, onScheduleEvent 
       </div>
       <div className="mt-[20px]">
         <button onClick={onScheduleEvent} className="bg-secondary text-white text-sm  w-full py-2 rounded-lg text-center">RESCHEDULE APPOINTMENT</button>
-        <button onClick={onCancelEvent} className="bg-white text-gray-700 text-center text-sm  rounded-lg py-2 mb-4 text-gray-600 mt-[20px] border-2 w-full">CANCEL APPOINTMENT</button>
+        <button onClick={onCancelEvent} className="bg-gray-100 text-gray-700 text-center text-sm  rounded-lg py-2 text-gray-600 mt-[20px] border-2 w-full">CANCEL APPOINTMENT</button>
+        <button onClick={() => setToastOpen(false)} className="bg-red-100 text-gray-700 text-center text-sm  rounded-lg py-2 mb-4 text-red-600 mt-[20px] border-2 w-full">CLOSE</button>
       </div>
     </div>
   )

@@ -4,6 +4,8 @@ import { Page, snackbar, Eventcalendar, getJson, Toast, CalendarNav, Button, Cal
 import AppointmentView from "../../components/appointment-view";
 import AppointmentForm from "../../components/appointment-form";
 import moment from 'moment';
+import Image from 'next/image';
+import {useRouter} from 'next/router';
 
 const colors = ['#ffeb3c', '#ff9900', '#f44437', '#ea1e63', '#9c26b0', '#3f51b5', '', '#009788', '#4baf4f', '#7e5d4e'];
 const initialValues = {
@@ -31,7 +33,17 @@ export default function Appointments() {
   const [actionType, setActionType] = useState('view');
   const [formValues, setFormValues] = useState({});
   const [currentDate, setCurrentDate] = React.useState(new Date());
+  const router = useRouter();
+  console.log("router", router)
 
+  useEffect(() => {
+    if (router.query?.id && data.some(item => item?._id === router.query.id)) {
+      const findQuery = data.find(item => item?._id === router.query.id)
+      setEventData(findQuery)
+      setActionType('view');
+      setToastOpen(true);
+    }
+  }, [router, data])
   const view = React.useMemo(() => {
         return {
             schedule: { type: viewType, allDay: false }
@@ -258,6 +270,43 @@ export default function Appointments() {
         </div>;
     }
 
+    const renderScheduleEvent = React.useCallback((data) => {
+        const dayType = viewType === 'day';
+
+        if(data.isMultiDay) {
+           return <div style={{background:data.original.color, color:'#000'}} className="multi-day-event">{data.original.title}</div>
+        }
+        else {
+            return <div className={`pl-2 h-full overflow-hidden relative`}>
+                <div className="absolute left-[20px] h-full w-full rounded-lg border-2 opacity-30 hover:opacity-50 -ml-2" style={{background:data.original.color}}></div>
+                <div className="single-day-event-dot " style={{background:data.original.color}}></div>
+                <div aria-hidden={true}>
+                  <div className="single-day-event pt-1 pl-3 font-medium" style={{color:'#000'}}>{data.original.title}</div>
+                <div className="single-day-event flex pl-3" style={{color:'#000'}}>
+                  <div className="">
+                  {data.start}
+                  </div>
+                  <div>{data.end}</div>
+                </div>
+                {dayType && (
+                   <div className="single-day-event flex pl-3" style={{color:'#000'}}>
+                  <div className="h-[20px] w-[20px] mr-3">
+                  <Image
+                    src={`/images/client.png`}
+                    height={20}
+                    width={20}
+                    alt="client"
+                    priority={true}
+                  />
+                  </div>
+                  <div>{data.original.owner}</div>
+                </div>
+                )}
+                </div>
+            </div>
+        }
+      });
+
     const onCancelEvent = () => {
       deleteEvent(eventData)
       setToastOpen(false);
@@ -287,6 +336,7 @@ export default function Appointments() {
           onSelectedDateChange={onSelectedDateChange}
           selectedDate={currentDate}
           renderHeader={customWithNavButtons}
+          renderScheduleEvent={renderScheduleEvent}
           onEventClick={onEventClick}
           onEventCreated={onEventCreated}
           onEventDeleted={onEventDeleted}
@@ -298,7 +348,12 @@ export default function Appointments() {
       {isToastOpen && (
         <div className={`w-[240px] overflow-y-auto`}>
           {actionType === 'view' ?
-            <AppointmentView event={eventData} onCancelEvent={onCancelEvent} onScheduleEvent={onScheduleEvent} />
+            <AppointmentView 
+            event={eventData} 
+            onCancelEvent={onCancelEvent} 
+            onScheduleEvent={onScheduleEvent}
+            setToastOpen={setToastOpen}
+          />
           : 
             <AppointmentForm 
               formValues={formValues} 
