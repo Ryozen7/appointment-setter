@@ -102,17 +102,25 @@ export default function Navbar() {
         )}
       </div>
       <div className="w-[286px] flex gap-[10px]">
-        <button className="flex gap-[10px] justify-center items-center">
-          <div className="">
+        <button className="flex gap-[5px] justify-center items-center">
+          <div className="w-[36px] h-[36px] -mb-2">
             <Image
               src={`/images/user-photo.png`}
-              width={20}
-              height={20}
+              width={36}
+              height={36}
               alt={"user"}
               priority={true}
             />
           </div>
-          <span>Jane Dee</span>
+          <span className="w-[70px]">Jane Dee</span>
+          <div className="">
+            <Image
+              src={`/images/dropdown.svg`}
+              width={20}
+              height={20}
+              alt={"dropdown"}
+            />
+          </div>
         </button>
         <button>
           <Image
@@ -124,13 +132,20 @@ export default function Navbar() {
           />
         </button>
         <button>
-          <Image
-            src={`/images/settings-icon.svg`}
-            width={36}
-            height={36}
-            alt={"settings"}
-            priority={true}
-          />
+          <Link
+            href={{
+              pathname: "/settings"
+            }}
+            className={"w-full h-full"}
+          >
+            <Image
+              src={`/images/settings-icon.svg`}
+              width={36}
+              height={36}
+              alt={"settings"}
+              priority={true}
+            />
+          </Link>
         </button>
         <button>
           <Image

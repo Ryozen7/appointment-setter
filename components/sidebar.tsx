@@ -29,13 +29,17 @@ const Sidebar = ({ children }: any) => {
       } h-screen bg-primary relative`}
     >
       <div className="h-[116px] w-full flex justify-center py-10 border-b-[1.5px] border-b-gray-700">
-        <Image
-          src={`${collapse ? "/images/logo.svg" : "/images/logo-name.svg"}`}
-          height={collapse ? 40 : 50}
-          width={collapse ? 40 : 150}
-          alt="logo"
-          priority={true}
-        />
+        <Link
+          href={'/'}
+        >
+          <Image
+            src={`${collapse ? "/images/logo.svg" : "/images/logo-name.svg"}`}
+            height={collapse ? 40 : 50}
+            width={collapse ? 40 : 150}
+            alt="logo"
+            priority={true}
+          />
+        </Link>
       </div>
       <div
         className={`w-full flex flex-col my-10 ${

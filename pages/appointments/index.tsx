@@ -37,7 +37,6 @@ const colors = [
   "#ea1e63",
   "#9c26b0",
   "#3f51b5",
-  "",
   "#009788",
   "#4baf4f",
   "#7e5d4e",
@@ -71,6 +70,7 @@ export default function Appointments() {
   const [formValues, setFormValues] = useState<FormValues>(initialValues);
   const [currentDate, setCurrentDate] = useState(new Date());
   const router = useRouter();
+  const formatToLocalTime = (time: string) => moment(time).local().format();
 
   useEffect(() => {
     if (
@@ -116,14 +116,17 @@ export default function Appointments() {
         .then((res) => res.json())
         .then((res) => {
           setLoading(false);
-          setData(res.data || []);
+          const newData = res.data?.map((item : any) => ({
+            ...item, 
+            start: formatToLocalTime(item.start), 
+            end: (formatToLocalTime(item.end)) }))
+          setData(newData || []);
         })
         .catch(() => setLoading(false));
     };
 
     fetchData();
   }, []);
-
   const createEventApi = (values: Object) => {
     const data = {
       method: "POST",
@@ -193,13 +196,15 @@ export default function Appointments() {
     const randomId = Math.floor(Math.random() * 99999999);
     const newEvent: any = {
       ...formValues,
-      id: tempEvent.id || `${randomId}`,
+      id: formValues.id || tempEvent.id || `${randomId}`,
       title: formValues.title || "",
       description: formValues?.description || formValues?.owner,
       start: formValues?.start || "2023-09-14T07:00:00.000Z",
       end: formValues?.end || "2023-09-14T09:00:00.000Z",
       color: formValues?.color || colors[random] || "#fff",
     };
+
+      console.log("req.body", newEvent)
     if (actionType === "edit") {
       // update the event in the list
       const index = data.findIndex((x: any) => x._id === tempEvent._id);
@@ -208,8 +213,6 @@ export default function Appointments() {
       newEventList.splice(index, 1, newEvent);
       setData(newEventList);
       updateEventApi(newEvent);
-      // here you can update the event in your storage as well
-      // ...
     } else {
       // add the new event to the list
       setData([...data, newEvent]);
@@ -223,12 +226,11 @@ export default function Appointments() {
   }, [actionType, data, tempEvent, formValues]);
 
   const onEventCreated = useCallback((args: any) => {
-    console.log("event args", args);
     setTempEvent(args.event);
     setActionType("add");
     setToastOpen(true);
   }, []);
-
+  console.log("req.body", data)
   const deleteEvent = React.useCallback(
     (event: any) => {
       setData(data.filter((item: any) => item._id !== event._id));
@@ -368,7 +370,7 @@ export default function Appointments() {
       return (
         <div className={`pl-2 h-full overflow-hidden relative`}>
           <div
-            className="absolute left-[20px] h-full w-full rounded-lg border-2 opacity-30 hover:opacity-50 -ml-2"
+            className="absolute left-[20px] h-full w-full rounded-lg opacity-30 hover:opacity-50 -ml-2"
             style={{ background: data.original.color }}
           ></div>
           <div
@@ -454,7 +456,7 @@ export default function Appointments() {
       </div>
 
       {isToastOpen && (
-        <div className={`w-[240px] overflow-y-auto`}>
+        <div className={`w-[400px] overflow-y-auto`}>
           {actionType === "view" ? (
             <AppointmentView
               event={eventData}

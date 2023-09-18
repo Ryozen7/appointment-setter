@@ -17,7 +17,7 @@ export default function AppointmentForm({
     formValues.start || null,
     formValues.end || null,
   ]);
-  const inputClass = "border-[1.5px] border-gray-400 ml-2 rounded-sm w-full";
+  const inputClass = "border-[1.5px] border-gray-400 ml-2 rounded-sm w-full pl-2";
   const onChangeValues = (e) => {
     const name = e.target?.name || "clinicValue";
     const value = e.target?.value || e.value;

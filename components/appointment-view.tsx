@@ -40,20 +40,47 @@ export default function AppointmentView({
       <div className="w-full py-2 border-b-2 border-gray-200 flex flex-col gap-[5px]">
         <div className="text-[14px] text-gray-500">CONTACT INFORMATION</div>
         <div className="flex">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+            <Image
+              src={`/images/email.svg`}
+              height={20}
+              width={20}
+              alt="email"
+              priority={true}
+            />
+          </div>
           <div className="text-[16px] text-gray-500 w-[50px]">Email</div>
           <div className="text-[16px] text-primary ml-[10px]">
             chrissielee@gmail.com
           </div>
         </div>
         <div className="flex">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+            <Image
+              src={`/images/phone.svg`}
+              height={20}
+              width={20}
+              alt="phone"
+              priority={true}
+            />
+          </div>
           <div className="text-[16px] text-gray-500 w-[50px]">Phone</div>
           <div className="text-[16px] text-primary ml-[10px]">
             +01 234 567 8910
           </div>
         </div>
         <div className="flex">
-          <div className="text-[16px] text-gray-500 w-[50px]">Address</div>
-          <div className="text-[16px] text-primary ml-[10px]">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+            <Image
+              src={`/images/address.svg`}
+              height={20}
+              width={20}
+              alt="address"
+              priority={true}
+            />
+          </div>
+          <div className="text-[16px] text-gray-500">Address</div>
+          <div className="text-[16px] text-primary w-[200px] ml-[10px]">
             1st Avenue, Golden Street, Springville Village, San Diego,
             California
           </div>
@@ -78,20 +105,47 @@ export default function AppointmentView({
           </div>
         </div>
         <div className="flex">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+            <Image
+              src={`/images/email.svg`}
+              height={20}
+              width={20}
+              alt="email"
+              priority={true}
+            />
+          </div>
           <div className="text-[16px] text-gray-500 w-[50px]">Email</div>
           <div className="text-[16px] text-primary ml-[10px]">
             branch1@gmail.com
           </div>
         </div>
         <div className="flex">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+            <Image
+              src={`/images/phone.svg`}
+              height={20}
+              width={20}
+              alt="phone"
+              priority={true}
+            />
+          </div>
           <div className="text-[16px] text-gray-500 w-[50px]">Phone</div>
           <div className="text-[16px] text-primary ml-[10px]">
             {clinic.contact_number}
           </div>
         </div>
         <div className="flex">
-          <div className="text-[16px] text-gray-500 w-[50px]">Address</div>
-          <div className="text-[16px] text-primary ml-[10px]">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+            <Image
+              src={`/images/address.svg`}
+              height={20}
+              width={20}
+              alt="address"
+              priority={true}
+            />
+          </div>
+          <div className="text-[16px] text-gray-500">Address</div>
+          <div className="text-[16px] text-primary w-[200px] ml-[10px]">
             {clinic.building}, {clinic.address}{" "}
           </div>
         </div>
@@ -119,24 +173,60 @@ export default function AppointmentView({
           </div>
         </div>
         <div className="flex">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+              <Image
+                src={`/images/breed.svg`}
+                height={20}
+                width={20}
+                alt="breed"
+                priority={true}
+              />
+            </div>
           <div className="text-[16px] text-gray-500 w-[50px]">Breed</div>
           <div className="text-[16px] text-primary ml-[10px]">
             {event.breed || "NA"}
           </div>
         </div>
         <div className="flex">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+            <Image
+              src={`/images/sex.svg`}
+              height={20}
+              width={20}
+              alt="sex"
+              priority={true}
+            />
+          </div>
           <div className="text-[16px] text-gray-500 w-[50px]">Sex</div>
           <div className="text-[16px] text-primary ml-[10px]">
             {event.petGender || "NA"}
           </div>
         </div>
         <div className="flex">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+            <Image
+              src={`/images/age.svg`}
+              height={20}
+              width={20}
+              alt="age"
+              priority={true}
+            />
+          </div>
           <div className="text-[16px] text-gray-500 w-[50px]">Age</div>
           <div className="text-[16px] text-primary ml-[10px]">
             {event.petAge || "NA"}
           </div>
         </div>
         <div className="flex">
+          <div className="h-[20px] w-[20px] mr-2 mt-[2px]">
+            <Image
+              src={`/images/birthday.svg`}
+              height={20}
+              width={20}
+              alt="birthday"
+              priority={true}
+            />
+          </div>
           <div className="text-[16px] text-gray-500 w-[50px]">Birthday</div>
           <div className="text-[16px] text-primary ml-[10px]">
             {event.petBirth || "NA"}
